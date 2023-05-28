@@ -12,7 +12,7 @@ const GetUser = async (req,res) => {
                res.json({
 
                success : true,
-               data : Newuser,
+               data : result,
 
                })
                } else {

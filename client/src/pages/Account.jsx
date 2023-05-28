@@ -9,10 +9,19 @@ import HistoryIcon from '@mui/icons-material/History';
 import { Link } from "react-router-dom";
  
 export const Account = () => {
+  
+// const Logout = async (req, res) => {
+//     res.clearCookie('jwt_token');
+//     res.json({
+//       success: true,
+//       data: {
+//         message: 'Logout successful',
+//       },
+//     });
+//   };
+const [user, setUser] = React.useState()
 
-     const [user, setUser] = useState()
-
-useEffect(() => {
+React.useEffect(() => {
      try {
           axios.get(`http://localhost:8001/user`).then((res) => {
           if (res.data.success) {
@@ -73,15 +82,15 @@ useEffect(() => {
           <AccountCircleIcon
             sx={{ height: "100px", width: "100px", marginTop: "30px" }}
           />
-          <Typography style={{ marginTop: "10px" }}>@username</Typography>
+          <Typography style={{ marginTop: "10px" }}>{user.username ?? "username"}</Typography>
           <Typography style={{ marginTop: "10px" }}>
-            Email : Banana@gmail.com
+            Email : {user?.email ?? "email"}
           </Typography>
           <div style={{flexDirection: "row"}}>
           <Button style={{ marginTop: "15px" , marginRight: "15px", width: "130px"}} variant="outlined" startIcon={<EditIcon />}>
             Edit
           </Button>
-          <Button style={{ marginTop: "15px" , marginRight: "15px", width: "130px"}} variant="contained" color="error" startIcon={<LogoutIcon />}>
+          <Button style={{ marginTop: "15px" , marginRight: "15px", width: "130px"}} variant="contained" color="error" startIcon={<LogoutIcon />} onClick={Logout}>
             Log Out
           </Button>
           <Link to="/History">

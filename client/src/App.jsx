@@ -11,6 +11,7 @@ import HistoryComponent from './pages/History'
 import RandomMajorcard from './pages/RandomMajorcard'
 import RandomGoldencard from './pages/RandomGlodencard'
 import RandomSubcard from './pages/RandomSubcard'
+import { Account } from "./pages/Account.jsx";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/randommajorcard" element={<RandomMajorcard />} />
         <Route path="/randomgoldencard" element={<RandomGoldencard />} />
         <Route path="/randomsubcard" element={<RandomSubcard />} />
+        <Route path="/account" element={<Account /> } />
       </Routes>
   );
 }
