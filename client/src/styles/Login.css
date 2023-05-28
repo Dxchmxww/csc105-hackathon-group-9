@@ -1,0 +1,37 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Logo {
+  font-family: "Anuphan", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: 40px;
+  color: #39487e;
+  margin-bottom: 5px;
+}
+
+.background-video {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+   }
+   
+   .video-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     opacity: 0.5; /* Adjust the opacity as needed */
+   }
+   
+   .video-overlay iframe {
+     width: 100%;
+     height: 100%;
+   }
+   
